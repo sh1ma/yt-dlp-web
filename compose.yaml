@@ -1,0 +1,19 @@
+services:
+  web:
+    build: web
+    ports:
+      - "3000:3000"
+    depends_on:
+      - downloader
+    networks:
+      - front
+
+  downloader:
+    build: downloader
+    ports:
+      - "3001:3001"
+    networks:
+      - front
+
+networks:
+  front:
