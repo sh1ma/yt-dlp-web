@@ -58,7 +58,11 @@ function App() {
           onChange={(e) => handleUrlChange(e)}
           placeholder='https://www.youtube.com/watch?v=2b1IexhKPz4'
           className={`p-2 rounded-sm w-full border-b-2 border-gray-300 ${
-            isUrlValid ? 'border-green-500' : 'border-red-500'
+            url !== ''
+              ? isUrlValid
+                ? 'border-green-500'
+                : 'border-red-500'
+              : null
           }`}
         />
         <button
